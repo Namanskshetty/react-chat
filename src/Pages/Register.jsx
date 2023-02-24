@@ -7,7 +7,7 @@ export const Register = () => {
             <span className='logo'>TTG Social</span>
             <span className='title'>Register</span>
         <form>
-            <input type="text" placeholder="display name"/>
+            <input type="text" placeholder="Display Name"/>
             <input type="email" placeholder="Email"/>
             <input type="password" placeholder="Password"/>
             <input style={{display:"none"}} type="file"/>
