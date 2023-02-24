@@ -1,7 +1,19 @@
 import React from 'react'
 
-export const Search = () => {
+const Search = () => {
   return (
-    <div>Search</div>
+    <div className='search'>
+      <div className='searchForm'>
+        <input type='text' placeholder='find a user'/>
+      </div>
+      <div className='userChat'>
+        <img src=''/>
+        <div className='uesrChatInfo'>
+          <span>
+            Jane
+          </span>
+        </div>
+      </div>
+    </div>
   )
 }
