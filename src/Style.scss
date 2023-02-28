@@ -1,16 +1,16 @@
 @mixin mobile{
     @media screen and (max-width: 480px) {
-        @content
+        @content;
     }
 }
 @mixin tablet{
     @media screen and (max-width: 768px) {
-        @content
+        @content;
     }
 }
 @mixin laptop{
     @media screen and (max-width: 1200px) {
-        @content
+        @content;
     }
 }
 
@@ -93,6 +93,9 @@
         height: 80%;
         display: flex;
         overflow: hidden;
+        @include tablet{
+            width: 90%;
+        }
 
         .sidebar {
             flex: 1;
@@ -109,6 +112,9 @@
                 color: #FFE3D8;
                 .logo{
                     font-weight: bold;
+                    @include tablet{
+                        display: none;
+                    }
 
                 }
                 .user{
@@ -132,6 +138,10 @@
                     cursor: pointer;
                     border-radius: 20%;
                     font-weight: bold;
+                    @include tablet{
+                        position: absolute;
+                        bottom: 10px;
+                    }
                 }
 
             }
@@ -223,10 +233,33 @@
                             }
                     }
                     .messageContent{
-                        img{width: 50%;
+                        max-width: 80%;
+                        display: flex;
+                        flex-direction: column;
+                        gap: 10px;
+                        p{
+                            background-color: white;
+                            padding: 10px 20px;
+                            border-radius: 0px 10px 10px;
+                            max-width: max-content;
+                        }
+                        img{
+                            width: 50%;
                         }
                         &:hover{font-size: 25px;}
                     }
+                    &.owner{
+                        flex-direction: row-reverse;
+                        .messageContent{
+                            align-items: flex-end;
+                    
+                    p{
+                        background-color: #443C68;
+                        color:#FFF4D2;
+                        border-radius: 10px 0px 10px 10px;
+                    }
+                }
+                }
                 }
             }
             .input{
